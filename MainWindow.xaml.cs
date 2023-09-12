@@ -15,7 +15,8 @@ namespace UWB
     {
         private Thread thread;
         private UdpService<TagData> service;
-        private double x, y = 0;
+        private double x, y, z = 100;
+        private readonly double step = 0.031;
 
         public MainWindow()
         {
@@ -46,21 +47,21 @@ namespace UWB
             for (int i = 0; i < links.Length; i++)
             {
                 var p = Positioning.Calculate(links[i]);
-                if (Math.Abs(x - p.Item4.x) <= 0.051 | Math.Abs(y - p.Item4.y) <= 0.051)
-                {
-                    Dispatcher.BeginInvoke(new Action(() =>
-                    {
-                        tX.Text = string.Format("{0:0.##}", p.Item1);
-                        tY.Text = string.Format("{0:0.##}", p.Item2);
-                        tZ.Text = string.Format("{0:0.##}", p.Item3);
+                //if (Math.Abs(x - p.Item4.x) <= step | Math.Abs(y - p.Item4.y) <= step | Math.Abs(z - p.Item4.z) <= step)
+                //{
+                //    Dispatcher.BeginInvoke(new Action(() =>
+                //    {
+                //        tX.Text = string.Format("{0:0.##}", p.Item1);
+                //        tY.Text = string.Format("{0:0.##}", p.Item2);
+                //        tZ.Text = string.Format("{0:0.##}", p.Item3);
 
-                        r1.Text = string.Format("{0:0.##}", p.Item4.x);
-                        r2.Text = string.Format("{0:0.##}", p.Item4.y);
-                        r3.Text = string.Format("{0:0.##}", p.Item4.z);
-                    }));
-                }
-                else
-                {
+                //        r1.Text = string.Format("{0:0.##}", p.Item4.x);
+                //        r2.Text = string.Format("{0:0.##}", p.Item4.y);
+                //        r3.Text = string.Format("{0:0.##}", p.Item4.z);
+                //    }));
+                //}
+                //else
+                //{
                     Dispatcher.BeginInvoke(new Action(() =>
                     {
                         MovePoint(p.Item1, p.Item2);
@@ -85,10 +86,10 @@ namespace UWB
                         }
                         catch { /* ignore */}
                     }));
-                }
-
-                x = p.Item4.x;
-                y = p.Item4.y;
+                //    x = p.Item4.x;
+                //    y = p.Item4.y;
+                //    z = p.Item4.z;
+                //}
             }
         }
     }

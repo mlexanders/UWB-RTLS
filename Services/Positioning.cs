@@ -6,8 +6,8 @@ namespace UWB.Services
     public class Positioning
     {
 
-        public static readonly double A12 = 2.83;
-        public static readonly double A13 = 1.73;
+        public static readonly double A12 = 1.6; //2.83;
+        public static readonly double A13 = 0.8; //1.73;
         private static readonly Points points = new();
 
         public static (double, double, double, Points) Calculate(TagData p)
