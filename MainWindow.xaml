@@ -14,8 +14,9 @@
             <ColumnDefinition Width="6*"/>
             <ColumnDefinition Width="790*"/>
         </Grid.ColumnDefinitions>
+        
         <Canvas x:Name="canvas" Margin="84,55,260,55" Grid.Column="4">
-            <Ellipse x:Name="ellipse" Height="30" Width="30" HorizontalAlignment="Center" Canvas.Top="54" VerticalAlignment="Top">
+            <Ellipse x:Name="tag" Height="30" Width="30" HorizontalAlignment="Center" Canvas.Top="54" VerticalAlignment="Top">
                 <Ellipse.Fill>
                     <RadialGradientBrush>
                         <GradientStop Color="#B21921E5" Offset="0.01"/>
@@ -40,5 +41,26 @@
             <TextBlock Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="654" HorizontalAlignment="Left" VerticalAlignment="Top" Text="A 3" FontFamily="Bahnschrift Condensed" FontSize="18" Foreground="#E0D0A402"/>
             <TextBlock Grid.Column="4" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Text="A 1" Canvas.Left="2" Canvas.Top="6" FontSize="18" Foreground="#FF0078D7"/>
         </Canvas>
+        <Path Stroke="#A80F37B0"  StrokeThickness="1" Grid.ColumnSpan="5">
+            <Path.Data>
+                <EllipseGeometry x:Name="ellipseA1"
+            RadiusX="55" 
+            RadiusY="55" Center="115,75" />
+            </Path.Data>
+        </Path>
+        <Path Stroke="#8CB9005A"  StrokeThickness="1" Grid.ColumnSpan="5">
+            <Path.Data>
+                <EllipseGeometry x:Name="ellipseA2"
+             RadiusX="50" 
+             RadiusY="50" Center="1005,75" />
+            </Path.Data>
+        </Path>
+        <Path Stroke="#74D0A402"  StrokeThickness="1" Grid.ColumnSpan="5">
+            <Path.Data>
+                <EllipseGeometry x:Name="ellipseA3"
+             RadiusX="50" 
+             RadiusY="50" Center="115,720" />   
+            </Path.Data>
+        </Path>
     </Grid>
 </Window>

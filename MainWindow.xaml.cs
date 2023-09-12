@@ -36,8 +36,8 @@ namespace UWB
 
         public void MovePoint(double x, double y)
         {
-            Canvas.SetLeft(ellipse, x * 100);
-            Canvas.SetTop(ellipse, y * 170);
+            Canvas.SetLeft(tag, x * 100);
+            Canvas.SetTop(tag, y * 170);
         }
 
         private void Update()
@@ -57,6 +57,16 @@ namespace UWB
                     r1.Text = string.Format("{0:0.##}", p.Item4.x);
                     r2.Text = string.Format("{0:0.##}", p.Item4.y);
                     r3.Text = string.Format("{0:0.##}", p.Item4.z);
+
+                    ellipseA1.RadiusX = p.Item4.x / 2.7 * 920;
+                    ellipseA1.RadiusY = p.Item4.x / 2.7 * 920;
+
+                    ellipseA2.RadiusX = p.Item4.y / 2.7 * 920;
+                    ellipseA2.RadiusY = p.Item4.y / 2.7 * 920;
+
+                    ellipseA3.RadiusX = p.Item4.z / 2.7 * 920;
+                    ellipseA3.RadiusY = p.Item4.z / 2.7 * 920;
+
                 }));
             }
         }
